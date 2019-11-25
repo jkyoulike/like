@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组件实现点赞功能</title>
+    <style>
+    .liked{
+    background: red;
+    }
+        </style>
+</head>
+<body>
+    <div id="app">
+        <like></like>
+    </div>
+    <template  id='like-component-tpl'>
+          <button :class="{liked:liked}" @click="toggle_like()">
+            点赞❤ {{like_count}} 
+            </button>   
+    </template>
+    <script src="vue.js"></script>
+    <script src="component02.js"></script>
+</body>
+</html>

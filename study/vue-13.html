@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VUE 插槽</title>
+    <style>
+        .panel{
+            max-width: 300px;
+            border:1px solid #999;
+            margin-bottom:15px;
+        }
+        .panel > *{
+          padding:15px;
+        }
+        .panel .title{
+            border-bottom:1px solid #999;
+        }
+        .panel .footer{
+            border-top:1px solid #999;
+            text-align:right;
+            height:20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+       <panel>
+           <div slot="title">
+               Vue这是标题栏
+           </div>
+           <div slot="content">
+             2YO>>>>>>有******我来试试
+           </div>
+       </panel>
+       <panel>2YO>>>>>>有******</panel>
+       <panel>
+           <div slot="title">
+             在目前带三大前段框架中
+           </div>
+           <div slot="content">
+                在目前的三大前端框架中（Vue，Angular，React）Vue怕是最好上手的框架了，然而其核心功能和其他两者也竟然不相伯仲，那有什么理由不先学它呢？
+           </div>
+       </panel>
+    </div>
+
+    <template id="panel-tpl">
+       <div class="panel">
+         <div class="title">
+            <slot name="title"></slot>
+         </div>
+         <div class="content">
+             <slot name="content"></slot>
+         </div>
+         <div class="footer">more>></div>
+       </div>
+    </template>
+    <script src="vue.js"></script>
+    <script src="slote.js"></script>
+</body>
+</html>
